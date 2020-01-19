@@ -19,7 +19,8 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        getSupportActionBar().setTitle(R.string.titleMovie);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(R.string.titleMovie);
 
         tvObject = findViewById(R.id.tv_object);
 
