@@ -15,11 +15,11 @@ public class MoviesAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<Movie> movies;
 
-    public void setMovies(ArrayList<Movie> movies) {
+    void setMovies(ArrayList<Movie> movies) {
         this.movies = movies;
     }
 
-    public MoviesAdapter(Context context) {
+    MoviesAdapter(Context context) {
         this.context = context;
         movies = new ArrayList<>();
     }
@@ -61,12 +61,6 @@ public class MoviesAdapter extends BaseAdapter {
             txtDescription = view.findViewById(R.id.txt_description);
             imgPhoto = view.findViewById(R.id.img_photo);
         }
-
-//    static class ViewHolder {
-//        TextView txtName;
-//        TextView txtDescription;
-//        ImageView imgPhoto;
-//    }
 
         void bind(Movie movie) {
             txtName.setText(movie.getName());

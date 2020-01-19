@@ -19,13 +19,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        getSupportActionBar().setTitle("Detail Movies");
+        getSupportActionBar().setTitle(R.string.titleMovie);
 
         tvObject = findViewById(R.id.tv_object);
-
-//        txtName = findViewById(R.id.tv_nama);
-//        txtDesc = findViewById(R.id.tv_detail);
-//        imgPhoto = findViewById(R.id.img_movie);
 
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
 

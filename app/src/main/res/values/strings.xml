@@ -15,6 +15,11 @@
     <string name="lorem">lorem ipsum dolor sit amet</string>
 
     <string name="app_name">MovieCatalogueApp</string>
+    <string name="titleMovie">Detail Movies</string>
+    <string name="titleList">List Movies</string>
+    <string name="alertDialog">Apakah Kamu benar-benar ingin keluar?</string>
+    <string name="alertYes">Ya</string>
+    <string name="alertNo">Tidak</string>
 
     <string-array name="data_description">
         <item>Alien: Resurrection merupakan sebuah film Amerika serikat yang dirilis pada tahun 1997. Film yang disutradarai oleh Jean-Pierre Jeunet ini pemainnya antara lain ialah Sigourney Weaver, Winona Ryder, Ron Perlman, Dan Hedaya, J. E. Freeman, Brad Dourif, Michael Wincott dan masih banyak lagi. Film ini dirilis pada tanggal 26 November 1997 dan berdurasi 109 menit. </item>

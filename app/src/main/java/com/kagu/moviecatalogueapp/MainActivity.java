@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("List Movies");
+        getSupportActionBar().setTitle(R.string.titleList);
 
         adapter = new MoviesAdapter(this);
         ListView listView = findViewById(R.id.lv_list);
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(MainActivity.this, movies.get(i).getName(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 intent.putExtra(DetailActivity.EXTRA_MOVIE, movies.get(i));
@@ -65,14 +65,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public  void onBackPressed(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Apakah Kamu benar-benar ingin keluar?").setCancelable(false).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+        builder.setMessage(getString(R.string.alertDialog)).setCancelable(false)
+                .setPositiveButton(getString(R.string.alertYes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int id) {
                 moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
+                Process.killProcess(Process.myPid());
                 System.exit(1);
             }
-        }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+        }).setNegativeButton(getString(R.string.alertNo), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int arg1) {
 
